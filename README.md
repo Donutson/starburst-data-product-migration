@@ -5,11 +5,10 @@ L'objectif est de facilité la migration d'un dataset ou data product d'une inst
 Pour faire usage de ce package il faut avoir les éléments suivants
 1. Une instance de starburst Entreprise
 2. Python >= 3.7
-3. git+https://gitlab_analytics.ocitnetad.ci/cspt/datamesh/starburst-python-wrapper.git
+3. git+https://github.com/Donutson/starburst_api_python.git
 
 ## Installation
 
 ```shell
-export PIP_TRUSTED_HOST=gitlab_analytics.ocitnetad.ci
-pip install git+https://gitlab_analytics.ocitnetad.ci/cspt/datamesh/datamesh-migration.git
+pip install git+https://github.com/Donutson/starburst_api_python.git
 ```
