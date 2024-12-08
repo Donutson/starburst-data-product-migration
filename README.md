@@ -13,7 +13,3 @@ Pour faire usage de ce package il faut avoir les éléments suivants
 export PIP_TRUSTED_HOST=gitlab_analytics.ocitnetad.ci
 pip install git+https://gitlab_analytics.ocitnetad.ci/cspt/datamesh/datamesh-migration.git
 ```
-
-## Présentation du package
-
-BIENTOT
