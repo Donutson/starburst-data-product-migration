@@ -8,8 +8,6 @@ from starburst_api.classes.class_starburst import Starburst
 from datamesh_migration.migrators.dataset_migrant import DatasetMigrant
 from datamesh_migration.files.starburst_files import read_starburst_files
 
-from datamesh_migration.variables import STARBURST_PROD_CATALOG
-
 
 class DatameshMigrator:
     """Provide methods to migrate data products entities"""
@@ -194,7 +192,6 @@ class DatameshMigrator:
         else:
             print(f"Domain {domains.get('dest')} has not product {product} ...")
             print(f"Product {product} would be create")
-            product_src.catalog_name = STARBURST_PROD_CATALOG
             product_src.data_domain_id = domain_dest.id
             self.starburst_client_dest.create_data_product(product_src)
 
@@ -392,7 +389,6 @@ class DatameshMigrator:
                 as_class=True,
             )
             product.data_domain_id = domain_dest.id
-            product.catalog_name = STARBURST_PROD_CATALOG
 
             # Overwrite product if exists at destination
             if product_name in products_dest_names:
