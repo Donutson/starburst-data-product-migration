@@ -10,5 +10,5 @@ Pour faire usage de ce package il faut avoir les éléments suivants
 ## Installation
 
 ```shell
-pip install git+https://github.com/Donutson/starburst_api_python.git
+pip install git+https://github.com/Donutson/starburst-data-product-migration.git
 ```
