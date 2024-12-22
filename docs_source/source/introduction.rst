@@ -1,5 +1,5 @@
-Starburst API Python
-====================
+Starburst Data Product Migration
+================================
  
 This package provides a set of APIs to help you migrate data products or datasets from one Starburst Enterprise instance to another.
 
