@@ -13,3 +13,4 @@ Starburst Data Product Migration documentation
 
    introduction
    dataset_migrant
+   migrators
