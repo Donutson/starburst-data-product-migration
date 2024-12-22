@@ -7,11 +7,29 @@ import yaml
 
 
 def validate_top_level_keys(data):
+    """
+    Validates that the top-level keys in the provided data are a subset of the expected valid keys.
+
+    Args:
+        data (dict): The input dictionary containing the keys to validate.
+
+    Returns:
+        bool: True if all top-level keys in the input are valid, False otherwise.
+    """
     valid_keys = {"domainNameSrc", "domainNameDest", "dataProducts"}
     return set(data.keys()).issubset(valid_keys)
 
 
 def validate_domain_names(data):
+    """
+    Validates the presence and non-emptiness of the 'domainNameSrc' and 'domainNameDest' fields.
+
+    Args:
+        data (dict): The input dictionary containing domain names to validate.
+
+    Returns:
+        bool: True if domain names are valid, False otherwise.
+    """
     if "domainNameSrc" not in data or not data["domainNameSrc"].strip():
         print("Please specify a non-empty domainNameSrc")
         return False
@@ -22,6 +40,15 @@ def validate_domain_names(data):
 
 
 def validate_data_products(data):
+    """
+    Validates the 'dataProducts' field and its dependencies, ensuring at least one valid data product is specified.
+
+    Args:
+        data (dict): The input dictionary containing data products to validate.
+
+    Returns:
+        bool: True if the 'dataProducts' field and its contents are valid, False otherwise.
+    """
     if "dataProducts" in data:
         if "domainNameDest" not in data or not data["domainNameDest"].strip():
             print("Please fill 'domainNameDest'")
@@ -36,6 +63,15 @@ def validate_data_products(data):
 
 
 def validate_product(product):
+    """
+    Validates the structure and content of a single data product, including its fields and datasets.
+
+    Args:
+        product (dict): The data product to validate.
+
+    Returns:
+        bool: True if the data product is valid, False otherwise.
+    """
     data_product_keys = {"productSrcName", "productDestName", "datasets"}
     if not set(product.keys()).issubset(data_product_keys):
         print("Invalid fields in product: ", set(product.keys()) - data_product_keys)
@@ -56,6 +92,15 @@ def validate_product(product):
 
 
 def validate_datasets(product):
+    """
+    Validates the 'datasets' field of a data product, ensuring it contains at least one valid dataset.
+
+    Args:
+        product (dict): The data product containing the 'datasets' field to validate.
+
+    Returns:
+        bool: True if all datasets in the 'datasets' field are valid, False otherwise.
+    """
     if not isinstance(product["datasets"], list) or not product["datasets"]:
         print("Cannot use field datasets without at least one dataset")
         return False
@@ -68,6 +113,16 @@ def validate_datasets(product):
 
 
 def validate_dataset(dataset, product):
+    """
+    Validates the structure and content of a single dataset within a data product.
+
+    Args:
+        dataset (dict): The dataset to validate.
+        product (dict): The parent data product containing the dataset.
+
+    Returns:
+        bool: True if the dataset is valid, False otherwise.
+    """
     dataset_keys = {"name", "type", "productDestName"}
     if not set(dataset.keys()).issubset(dataset_keys):
         print("Invalid keys in dataset: ", set(dataset.keys()) - dataset_keys)
@@ -117,6 +172,7 @@ def read_starburst_files(directory: str):
     """
     Reads all files with the .starburst extension in a given directory.
     Validates the content of each file according to specified criteria:
+
     - The 'DomainName' field is mandatory.
     - If 'dataProducts' is present, it must contain at least one product with a 'name'.
     - If 'Datasets' is present in a product, it must contain at least one dataset with 'name' and 'type'.
