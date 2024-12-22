@@ -82,6 +82,24 @@
 <ol class="arabic simple">
 <li><p>Prerequisite: Define Connection Info</p></li>
 </ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">starburst_api.classes.</span> <span class="kn">import</span> <span class="n">StarburstConnectionInfo</span>
+
+<span class="c1"># Connection details for source and destination instances</span>
+<span class="n">connection_src</span> <span class="o">=</span> <span class="n">StarburstConnectionInfo</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;source.starburst-instance.com&quot;</span><span class="p">,</span>
+    <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">,</span>
+    <span class="n">username</span><span class="o">=</span><span class="s2">&quot;source_user&quot;</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;source_password&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">connection_dest</span> <span class="o">=</span> <span class="n">StarburstConnectionInfo</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;destination.starburst-instance.com&quot;</span><span class="p">,</span>
+    <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">,</span>
+    <span class="n">username</span><span class="o">=</span><span class="s2">&quot;destination_user&quot;</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;destination_password&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
 <ol class="arabic simple" start="2">
 <li><p>Initialize DatameshMigrator</p></li>
 </ol>

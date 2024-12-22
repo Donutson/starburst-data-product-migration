@@ -10,6 +10,7 @@ Usage Example
 1. Prerequisite: Define Connection Info
 
 .. code-block:: python
+    
     from starburst_api.classes. import StarburstConnectionInfo
 
     # Connection details for source and destination instances
