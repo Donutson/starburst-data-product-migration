@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Starburst Data Product Migration documentation &mdash; Starburst Data Product Migration 0.5.0 documentation</title>
+  <title>Starburst API Python &mdash; Starburst Data Product Migration 0.5.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
@@ -29,7 +29,7 @@
 
           
           
-          <a href="#" class="icon icon-home">
+          <a href="index.html" class="icon icon-home">
             Starburst Data Product Migration
           </a>
 <div role="search">
@@ -42,7 +42,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <!-- Local TOC -->
               <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Starburst Data Product Migration documentation</a></li>
+<li><a class="reference internal" href="#">Starburst API Python</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+</ul>
+</li>
 </ul>
 </div>
         </div>
@@ -51,17 +55,17 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Starburst Data Product Migration</a>
+          <a href="index.html">Starburst Data Product Migration</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Starburst Data Product Migration documentation</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Starburst API Python</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/introduction.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -69,10 +73,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="starburst-data-product-migration-documentation">
-<h1>Starburst Data Product Migration documentation<a class="headerlink" href="#starburst-data-product-migration-documentation" title="Link to this heading"></a></h1>
-<div class="toctree-wrapper compound">
+  <section id="starburst-api-python">
+<h1>Starburst API Python<a class="headerlink" href="#starburst-api-python" title="Link to this heading"></a></h1>
+<p>This package provides a set of APIs to help you migrate data products or datasets from one Starburst Enterprise instance to another.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<p>To use this package, you need the following:</p>
+<ol class="arabic simple">
+<li><p>A Starburst Enterprise instance.</p></li>
+<li><p>Python &gt;= 3.7.*</p></li>
+<li><p>Required Python libraries:</p>
+<ul class="simple">
+<li><p>git+https://github.com/Donutson/starburst_api_python.git</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<p>Install the package using the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/Donutson/starburst-data-product-migration.git
+</pre></div>
 </div>
+</section>
 </section>
 
 
