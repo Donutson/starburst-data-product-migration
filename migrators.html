@@ -110,9 +110,47 @@
 <ol class="arabic simple" start="3">
 <li><p>Migrate a Dataset</p></li>
 </ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define dataset migration details</span>
+<span class="kn">from</span> <span class="nn">datamesh_migration.migrators.dataset_migrant</span> <span class="kn">import</span> <span class="n">DatasetMigrant</span>
+
+<span class="n">dataset_details</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Customer Data&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;view&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;productDestName&quot;</span><span class="p">:</span> <span class="s2">&quot;CustomerData_v2&quot;</span>
+<span class="p">}</span>
+
+<span class="n">product_names</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;src&quot;</span><span class="p">:</span> <span class="s2">&quot;CustomerData_v1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dest&quot;</span><span class="p">:</span> <span class="s2">&quot;CustomerData_v2&quot;</span>
+<span class="p">}</span>
+
+<span class="n">domain_names</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;src&quot;</span><span class="p">:</span> <span class="s2">&quot;Customer Domain&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dest&quot;</span><span class="p">:</span> <span class="s2">&quot;Updated Customer Domain&quot;</span>
+<span class="p">}</span>
+
+<span class="n">dataset_migrant</span> <span class="o">=</span> <span class="n">DatasetMigrant</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">dataset_details</span><span class="p">,</span> <span class="n">products_names</span><span class="o">=</span><span class="n">product_names</span><span class="p">,</span> <span class="n">domains_names</span><span class="o">=</span><span class="n">domain_names</span><span class="p">)</span>
+
+<span class="c1"># Migrate the dataset</span>
+<span class="n">migrator</span><span class="o">.</span><span class="n">migrate_dataset</span><span class="p">(</span><span class="n">dataset_migrant</span><span class="p">)</span>
+</pre></div>
+</div>
 <ol class="arabic simple" start="4">
 <li><p>Migrate a Product</p></li>
 </ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define source and destination domains</span>
+<span class="n">domains</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;src&quot;</span><span class="p">:</span> <span class="s2">&quot;Customer Domain&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dest&quot;</span><span class="p">:</span> <span class="s2">&quot;Updated Customer Domain&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Specify product to migrate</span>
+<span class="n">product_name</span> <span class="o">=</span> <span class="s2">&quot;CustomerData_v1&quot;</span>
+
+<span class="c1"># Migrate the product</span>
+<span class="n">migrator</span><span class="o">.</span><span class="n">migrate_product</span><span class="p">(</span><span class="n">domains</span><span class="p">,</span> <span class="n">product_name</span><span class="p">)</span>
+</pre></div>
+</div>
 <ol class="arabic simple" start="5">
 <li><p>Migrate a Domain</p></li>
 </ol>
